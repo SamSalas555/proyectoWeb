@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Registro CENDI</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+
+  <!-- Font Awesome  -->
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>FICHA DE INSCRIPCIÓN</h1>
+    </div>
+    <form class="form" id="formulario" action="algo.php" method="post">
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <input id="cicloEscolar" disabled type="text" value="2022-2023" class="validate">
+          <label for="cicloEscolar">Ciclo Escolar</label>
+        </div>
+
+        <div class="input-field col s12 m6 l8">
+          <select>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Amalia">Amalia Solórzano de Cárdenas</option>
+            <option value="Clementina" disabled>Clementina Batalla de Bassols</option>
+            <option value="Eva" disabled>Eva Samano de López Mateos</option>
+            <option value="Laura" disabled>Laura Pérez de Batis</option>
+            <option value="Margarita" disabled>Margarita Salazar de Erro</option>
+          </select>
+          <label>CENDI</label>
+        </div>
+
+      </div>
+
+      <!-- ******************** DATOS DEL NIÑ@ ****************************** -->
+      <div class="sub-head">
+        DATOS DEL NIÑ@
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l4" id="campo_apePaterno">
+          <input id="apePaterno" name="apePaterno" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_apePaterno"></i>
+          <label for="apePaterno">Apellido Paterno</label>
+          <p class="fomularioErrorEntrada">
+            El nombre solo puede contener letras.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_apeMaterno">
+          <input id="apeMaterno" name="apeMaterno" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_apeMaterno"></i>
+          <label for="apeMaterno">Apellido Materno</label>
+          <p class="fomularioErrorEntrada">
+            El apellido solo debe contener letras.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_nombre">
+          <input id="nombre" name="nombre" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_nombre"></i>
+          <label for="nombre">Nombre</label>
+          <p class="fomularioErrorEntrada">
+            El apellido solo debe contener letras.
+          </p>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6 l4" id="campo_fechaNacimiento">
+            <input id="fechaNacimiento" name="fechaNacimiento" type="text" class="datepicker validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_fechaNacimiento"></i>
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+          </div>
+          <div class="input-field col s12 m6 l4" id="campo_edad">
+            <input placeholder="" disabled id="edad" name="edad" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_edad"></i>
+            <label for="edad">Edad</label>
+            <p class="fomularioErrorEntrada">
+              La edad debe de ser igual o menor a 6
+            </p>
+          </div>
+          <div class="input-field col s12 m6 l4">
+            <input placeholder="" disabled id="meses" name="meses" type="text" class="validate">
+            <label for="meses">Meses</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12" id="campo_curp">
+            <input id="curp" name="curp" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_curp"></i>
+            <label for="curp">CURP</label>
+            <p class="fomularioErrorEntrada">
+              Verifica nuevamente tu CURP.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!-- ******************** DATOS DEL DERECHO HABIENTE****************************** -->
+      <div class="sub-head">
+        DATOS DEL DERECHO HABIENTE
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l4" id="campo_apePaternoDH">
+          <input id="apePaternoDH" name="apePaternoDH" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_apePaternoDH"></i>
+          <label for="apePaternoDH">Apellido Paterno</label>
+          <p class="fomularioErrorEntrada">
+            Tu apellido debe contener solo letras.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_apeMaternoDH">
+          <input id="apeMaternoDH" name="apeMaternoDH" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_apeMaternoDH"></i>
+          <label for="apeMaternoDH">Apellido Materno</label>
+          <p class="fomularioErrorEntrada">
+            Tu apellido debe contener solo letras.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_nombreDH">
+          <input id="nombreDH" name="nombreDH" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_nombreDH"></i>
+          <label for="nombreDH">Nombre</label>
+          <p class="fomularioErrorEntrada">
+            Tu nombre debe contener solo letras.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l12" id="campo_curpDH">
+          <input id="curpDH" name="curpDH" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_curpDH"></i>
+          <label for="curpDH">CURP</label>
+          <p class="fomularioErrorEntrada">
+            Verifica nuevamente tu curp.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+      </div>
+      <!-- /* *******************************+++ */ -->
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <input id="calle" type="text" class="validate">
+          <label for="calle">Calle</label>
+        </div>
+        <div class="input-field col s12 m3 l2">
+          <input id="noInt" type="text" class="validate">
+          <label for="noInt">No.Interior</label>
+        </div>
+        <div class="input-field col s12 m3 l2">
+          <input id="noExt" type="text" class="validate">
+          <label for="noExt">No.Exterior</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <input id="colonia" type="text" class="validate">
+          <label for="colonia">Colonia</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <input id="municipio" type="text" class="validate">
+          <label for="municipio">Alcaldia/Municipio</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <select>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="BajaCalifornia">Baja California</option>
+            <option value="Baja California Sur">Baja California Sur</option>
+            <option value="Campeche">Campeche</option>
+            <option value="Chiapas">Chiapas</option>
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Coahuila">Coahuila</option>
+            <option value="Colima">Colima</option>
+            <option value="CDMX">Ciudad de México</option>
+            <option value="Durango">Durango</option>
+            <option value="edoMex">Estado de México</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Hidalgo">Hidalgo</option>
+            <option value="Jalisco">Jalisco</option>
+            <option value="Michoacan">Michoacán</option>
+            <option value="Morelos">Morelos</option>
+            <option value="Nayarit">Nayarit</option>
+            <option value="NuevoLeon">Nuevo León</option>
+            <option value="Oaxaca">Oaxaca</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Queretaro">Querétaro</option>
+            <option value="QuintanaRoo">Quintana Roo</option>
+            <option value="SanLuisPotosi">San Luis Potosí</option>
+            <option value="Sinaloa">Sinaloa</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Tabasco">Tabasco</option>
+            <option value="Tamaulipas">Tamaulipas</option>
+            <option value="Tlaxcala">Tlaxcala</option>
+            <option value="Veracruz">Veracruz</option>
+            <option value="Yucatan">Yucatán</option>
+            <option value="Zacatecas">Zacatecas</option>
+          </select>
+          <label>Entidad Federativa</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <input id="cp" type="number" class="validate">
+          <label for="cp">Código Postal</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6 l4" id="campo_telFijo">
+          <input id="telFijo" name="telFijo" type="tel" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_telFijo"></i>
+          <label for="telFijo">Teléfono Fijo</label>
+          <p class="fomularioErrorEntrada">
+            El numero tel debe tener 10digitos.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_telCel">
+          <input id="telCel" name="telCel" type="tel" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_telCel"></i>
+          <label for="telCel">Teléfono Celular</label>
+          <p class="fomularioErrorEntrada">
+            El numero tel debe tener 10digitos.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4" id="campo_correo">
+          <input id="correo" name="correo" type="email" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_correo"></i>
+          <label for="correo">Correo Electrónico</label>
+          <p class="fomularioErrorEntrada">
+            Verifica tu correo.
+          </p>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <select>
+            <option value="" disabled selected>Elige una opción</option>
+            <option value="Docente">Docente</option>
+            <option value="PAAE">PAAE</option>
+            <option value="Funcionario">Funcionario(a)</option>
+          </select>
+          <label>Ocupación</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <input id="puesto" type="text" class="validate">
+          <label for="puesto">Nombre de Plaza/Puesto</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <input id="saldo" type="number" class="validate">
+          <label for="saldo">Saldo Mensual</label>
+        </div>
+      </div>
+      <!--END OF ROW-->
+      <div class="row">
+        <div class="input-field col s12 m6 l4">
+          <input id="noEmp" type="number" class="validate">
+          <label for="noEmp">No.Empleado</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <select>
+            <option value="" disabled selected>Elige una opción</option>
+            <option value="areaCentral">Área Central</option>
+            <option value="" disabled>Nivel Medio Superior</option>
+            <option value="cet1">CET 1</option>
+            <option value="cecyt1">CECyT No. 1</option>
+            <option value="cecyt2">CECyT No. 2</option>
+            <option value="cecyt3">CECyT No. 3</option>
+            <option value="cecyt4">CECyT No. 4</option>
+            <option value="cecyt5">CECyT No. 5</option>
+            <option value="cecyt6">CECyT No. 6</option>
+            <option value="cecyt7">CECyT No. 7</option>
+            <option value="cecyt8">CECyT No. 8</option>
+            <option value="cecyt9">CECyT No. 9</option>
+            <option value="cecyt10">CECyT No. 10</option>
+            <option value="cecyt11">CECyT No. 11</option>
+            <option value="cecyt12">CECyT No. 12</option>
+            <option value="cecyt13">CECyT No. 13</option>
+            <option value="cecyt14">CECyT No. 14</option>
+            <option value="cecyt15">CECyT No. 15</option>
+            <option value="cecyt16">CECyT No. 16</option>
+            <option value="cecyt17">CECyT No. 17</option>
+            <option value="cecyt18">CECyT No. 18</option>
+            <option value="cecyt19">CECyT No. 19</option>
+            <option value="" disabled>Nivel Superior</option>
+            <option value="cicsTomas">CICS Unidad Santo Tomás</option>
+            <option value="cicsMilpa">CICS Unidad Milpa Alta</option>
+            <option value="enba">ENBA</option>
+            <option value="encb">ENCB</option>
+            <option value="enmh">ENMyH</option>
+            <option value="escaTomas">ESCA Unidad Santo Tomás</option>
+            <option value="escaTetepan">ESCA Unidad Tetepan</option>
+            <option value="escom">ESCOM</option>
+            <option value="ese">ESE</option>
+            <option value="eseo">ESEO</option>
+            <option value="esfm">ESFM</option>
+            <option value="esiqie">ESIQIE</option>
+            <option value="esm">ESM</option>
+            <option value="est">EST</option>
+            <option value="esiaTecama">ESIA Unidad Tacamachalco</option>
+            <option value="esiaZacatenco">ESIA Unidad Zacatenco</option>
+            <option value="esiaTicoman">ESIA Unidad Ticomán</option>
+            <option value="esimeAzcap">ESIME Unidad Azcapotzalco</option>
+            <option value="esimeZacatenco">ESIME Unidad Zacatenco</option>
+            <option value="esimeCul">ESIME Unidad Culhuacán</option>
+            <option value="esimeTicoman">ESIME Unidad Ticomán</option>
+            <option value="upiicCoa">UPIIC Campus Coahuila</option>
+            <option value="upibi">UPIBI</option>
+            <option value="upiip">UPIIP Campus Palenque</option>
+            <option value="upiig">UPIIG Campus Guanajuato</option>
+            <option value="upiiz">UPIIZ Campus Zacatecas</option>
+            <option value="upiih">UPIIH Campus Hidalgo</option>
+            <option value="upiit">UPIIT Campus Tlaxcala</option>
+            <option value="upiicsa">UPIICSA</option>
+            <option value="upiita">UPIITA</option>
+            <option value="upiem">UPIEM</option>
+
+          </select>
+          <label>Adscripción</label>
+        </div>
+        <div class="input-field col s12 m6 l4">
+          <select>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="7am3pm">07:00am-15:00pm</option>
+            <option value="8am3pm">08:00am-15:00pm</option>
+            <option value="7am2pm">07:00am-14:00pm</option>
+          </select>
+          <label>Horario De Trabajo</label>
+        </div>
+        <!--horarios-->
+        ¿Tienes cónyuge?
+        <label>
+          <input name="conyuge" type="radio" class="si" />
+          <span>Sí</span>
+        </label>
+        <label>
+          <input name="conyuge" type="radio" class="no"/>
+          <span>No</span>
+        </label>
+        <div class="input-field col s12 m12 l8">
+          <input id="ext" type="number" class="validate">
+          <label for="ext">Extension</label>
+        </div>
+      </div>
+      <!--END OF ROW-->
+      <!-- ******************** TERMINA DATOS DEL DERECHO HABIENTE****************************** -->
+      <!-- ******************** DATOS DEL CONYUGE****************************** -->
+      <section id="datosCon">
+        <div class="sub-head">
+          DATOS DEL CÓNYUGE
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6 l4" id="campo_apePaternoCon">
+            <input id="apePaternoCon" name="apePaternoCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_apePaternoCon"></i>
+            <label for="apePaternoCon">Apellido Paterno</label>
+            <p class="fomularioErrorEntrada">
+              Tu apellido debe contener solo letras.
+            </p>
+          </div>
+          <div class="input-field col s12 m6 l4" id="campo_apeMaternoCon">
+            <input id="apeMaternoCon" name="apeMaternoCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_apeMaternoCon"></i>
+            <label for="apeMaternoCon">Apellido Materno</label>
+            <p class="fomularioErrorEntrada">
+              Tu apellido debe contener solo letras.
+            </p>
+          </div>
+          <div class="input-field col s12 m6 l4" id="campo_nombreCon">
+            <input id="nombreCon" name="nombreCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_nombreCon"></i>
+            <label for="nombreCon">Nombre</label>
+            <p class="fomularioErrorEntrada">
+              Tu nombre debe contener solo letras.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6 l6">
+            <input id="trabajoCon" type="text" class="validate">
+            <label for="trabajoCon">Lugar de trabajo</label>
+          </div>
+          <div class="input-field col s12 m6 l6" id="campo_telTrabajoCon">
+            <input id="telTrabajoCon" name="telTrabajoCon" type="tel" class="validate telNo">
+            <i class="formularioValidacion fas fa-times-circle grupo_telTrabajoCon"></i>
+            <label for="telTrabajoCon">Teléfono de trabajo</label>
+            <p class="fomularioErrorEntrada">
+              Debe de tener 10 dígitos.
+            </p>
+          </div>
+        </div>
+        <p class="domicilioTrabajo">
+          DOMICILIO DE TRABAJO
+        </p>
+        <div class="row">
+          <div class="input-field col s12 m6 l4">
+            <input id="calleTraCon" type="text" class="validate">
+            <label for="calleTraCon">Calle</label>
+          </div>
+          <div class="input-field col s12 m6 l4">
+            <input id="noExtCon" type="text" class="validate">
+            <label for="noExtCon">No. Exterior</label>
+          </div>
+          <div class="input-field col s12 m6 l4">
+            <input id="noIntCon" type="text" class="validate">
+            <label for="noIntCon">No. Interior</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6 l6">
+            <input id="coloniaCon" type="text" class="validate">
+            <label for="coloniaCon">Colonia</label>
+          </div>
+          <div class="input-field col s12 m6 l6">
+            <input id="municipioCon" type="text" class="validate">
+            <label for="municipioCon">Alcaldía/Municipio</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6 l6">
+            <input id="extensionCon" type="number" class="validate">
+            <label for="extensionCon">Extension (0000-99999)</label>
+          </div>
+          <div class="input-field col s12 m6 l6" id="campo_curpCon">
+            <input id="curpCon" name="curpCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_curpCon"></i>
+            <label for="curpCon">CURP</label>
+            <p class="fomularioErrorEntrada">
+              Verifica tu CURP nuevamente.
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- OTRAS COSAS DE VALIDACION Y ENVIAR-->
+      <div class="formularioMensajeError">
+        <p>
+          <i class="fas fa-exclamation-triangle"></i>
+          <em>Error:</em>
+          Verifica nuevamente todos los campos y llénalos correctamente.
+        </p>
+      </div>
+      <div class="botonEnviar">
+        <button class="btn waves-effect waves-light  btn-large" type="submit" name="action">
+          Enviar
+        </button>
+        <p class="mensajeExito">
+          El fomulario se envío correctamente.
+        </p>
+        <button class="btn waves-effect waves-light  btn-large" type="reset" name="action">
+          Limpiar
+        </button>
+      </div>
+
+
+  </div>
+  <!--END OF CONTAINER-->
+  </div>
+  </div>
+  </form>
+
+  </div>
+
+
+  <!-- jQuery cdn link-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="behaviour.js"></script>
+
+
+</body>
+
+</html>

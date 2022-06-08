@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CENDI IPN</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="css/svgbg.css">
     <link rel="stylesheet" href="css/styles.css">
+    
   </head>
-  <body>
+  <body style="font-family: 'Quicksand', sans-serif;">
     <!--Inicio de modulo de barra de navegacion
         --Los colores seran modificados mediante clases custom
         --La mayoria de los links estaran desactivados
@@ -65,13 +68,6 @@
       <div class="container">
         <div class="jumbotron">
             <h1 class="display-4">Coordinacion de Centros de Desarrollo Infantil</h1>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
-              Registrarse
-            </button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sesionModal">
-                Iniciar Sesión
-              </button>
-            </p>
           </div>
       </div>
       <!--Fin del Jumbotron-->
@@ -86,13 +82,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="ipn.jpg" class="d-block w-100" alt="...">
+                <img src="img/ipn.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="ipn.jpg" class="d-block w-100" alt="...">
+                <img src="img/cocendi.jpg" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img src="ipn.jpg" class="d-block w-100" alt="...">
+                <img src="img/ipn.jpg" class="d-block w-100" alt="...">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -106,24 +102,31 @@
           </div>
       </div>
       <!--Final del carrousel de noticias-->
-
+      <div class="container">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+          Registro
+        </button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sesionModal">
+            Recuperar PDF
+          </button>
+      </div>
 
       <!-- Modal -->
       <div class="modal fade" id="sesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Inicio de Sesion</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Recuperación de Archivo</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form>
                 <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                  <label for="inputEmail3" class="col-sm-6 col-form-label">Numero de Empleado</label>
                     <input type="email" class="form-control" id="inputEmail3">
                 </div>
                 <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                  <label for="inputPassword3" class="col-sm-6 col-form-label">Folio</label>
                     <input type="password" class="form-control" id="inputPassword3">
                 </div>
             </div>
