@@ -37,6 +37,30 @@
           </select>
           <label>CENDI</label>
         </div>
+        
+          <!-- FOTO DEL NIÑO -->
+        <div class="file-field input-field col s12 m6 l4" id="campo_foto">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" accept="image/png, image/gif, image/jpeg">
+          </div>
+          <div class="file-path-wrapper">
+            <input id="foto" name="foto" class="file-path validate" type="text">
+            <i class="formularioValidacion fas fa-times-circle grupo_foto"></i>
+          </div>
+          <p class="fomularioErrorEntrada">
+            La foto debe estar en formato png.
+          </p>
+        </div>
+
+        <div class="input-field col s12 m6 l8" id="campo_boleta">
+          <input id="boleta" name="boleta" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_boleta"></i>
+          <label for="boleta">Boleta</label>
+          <p class="fomularioErrorEntrada">
+            La boleta debe de contar con 10 dígitos o (PE/PP) seguido de 8 digitos.
+          </p>
+        </div>
 
       </div>
 
