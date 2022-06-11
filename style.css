@@ -35,13 +35,26 @@ h1{
   margin-bottom: 2px;
 }
 /* ------------------------ Para botones ----------------------------*/
-.btn{
-  border-radius: 10px 10px 10px 10px;
-  background-color:#D61C4E;
+.btn {
+  background: #d93434;
+  background-image: -webkit-linear-gradient(top, #d93434, #b51212);
+  background-image: -moz-linear-gradient(top, #d93434, #b51212);
+  background-image: -ms-linear-gradient(top, #d93434, #b51212);
+  background-image: -o-linear-gradient(top, #d93434, #b51212);
+  background-image: linear-gradient(to bottom, #d93434, #b51212);
+  border-radius: 15px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.btn:hover{
-  background-color: #EB5353;
+.btn:hover {
+  background: #f74d4d;
+  background-image: -webkit-linear-gradient(top, #f74d4d, #c75252);
+  background-image: -moz-linear-gradient(top, #f74d4d, #c75252);
+  background-image: -ms-linear-gradient(top, #f74d4d, #c75252);
+  background-image: -o-linear-gradient(top, #f74d4d, #c75252);
+  background-image: linear-gradient(to bottom, #f74d4d, #c75252);
+  text-decoration: none;
 }
 
 /* ------------------------ ----------------------------*/
