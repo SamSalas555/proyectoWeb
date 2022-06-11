@@ -1,7 +1,6 @@
 const formulario = $("#formulario"); //guarda TODO el FORMULARIO en una constante
 const inputs = $('#formulario input'); //guarda TODAS las INPUTS dentro del formulario
 const expresiones = {
-  foto: /\w*\.png$/,
   boleta: /^(\d{10}|(PE|PP)\d{8})$/,
   nombre: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
   apePaterno:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
@@ -23,7 +22,6 @@ const expresiones = {
 }
 
 const campos = {
-  foto: false,
   boleta: false,
   nombre: false,
   apePaterno:false,
@@ -97,9 +95,6 @@ function validarFormulario(e) {
     // validar datos del niño
     case "boleta":
       validarCampo(expresiones.boleta, e.target, e.target.name);
-      break;
-    case "foto":
-      validarCampo(expresiones.foto, e.target, e.target.name);
       break;
     case "apePaterno":
       validarCampo(expresiones.apePaterno, e.target, e.target.name);
