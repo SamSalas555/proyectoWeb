@@ -16,8 +16,9 @@
 
 <body>
   <div class="container">
-    <div class="header">
+    <div class="header row">
       <h1>FICHA DE INSCRIPCIÓN</h1>
+
     </div>
     <form class="form" id="formulario" action="algo.php" method="post">
       <div class="row">
@@ -37,12 +38,11 @@
           </select>
           <label>CENDI</label>
         </div>
-        
-          <!-- FOTO DEL NIÑO -->
+        <!-- FOTO DEL NIÑO -->
         <div class="file-field input-field col s12 m6 l4" id="campo_foto">
           <div class="btn">
             <span>File</span>
-            <input type="file" accept="image/png, image/gif, image/jpeg">
+            <input type="file" accept="image/png, image/jpeg">
           </div>
           <div class="file-path-wrapper">
             <input id="foto" name="foto" class="file-path validate" type="text">
@@ -166,25 +166,45 @@
       </div>
       <!-- /* *******************************+++ */ -->
       <div class="row">
-        <div class="input-field col s12 m6 l4">
-          <input id="calle" type="text" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_calle">
+          <input id="calle" name="calle" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_calle"></i>
           <label for="calle">Calle</label>
+          <p class="fomularioErrorEntrada">
+            Solo acepta números y letras.
+          </p>
         </div>
-        <div class="input-field col s12 m3 l2">
-          <input id="noInt" type="text" class="validate">
+        <div class="input-field col s12 m3 l2" id="campo_noInt">
+          <input id="noInt" name="noInt" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_noInt"></i>
           <label for="noInt">No.Interior</label>
+          <p class="fomularioErrorEntrada">
+            Solo acepta números y letras.
+          </p>
         </div>
-        <div class="input-field col s12 m3 l2">
-          <input id="noExt" type="text" class="validate">
+        <div class="input-field col s12 m3 l2" id="campo_noExt">
+          <input id="noExt" name="noExt" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_noExt"></i>
           <label for="noExt">No.Exterior</label>
+          <p class="fomularioErrorEntrada">
+            Solo acepta números y letras.
+          </p>
         </div>
-        <div class="input-field col s12 m6 l4">
-          <input id="colonia" type="text" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_colonia">
+          <input id="colonia" name="colonia" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_colonia"></i>
           <label for="colonia">Colonia</label>
+          <p class="fomularioErrorEntrada">
+            Acepta: letras,números,-,_,.
+          </p>
         </div>
-        <div class="input-field col s12 m6 l4">
-          <input id="municipio" type="text" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_municipio">
+          <input id="municipio" name="municipio" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_municipio"></i>
           <label for="municipio">Alcaldia/Municipio</label>
+          <p class="fomularioErrorEntrada">
+            Acepta máximo 5 palabras y únicamente letras.
+          </p>
         </div>
         <div class="input-field col s12 m6 l4">
           <select>
@@ -224,9 +244,13 @@
           </select>
           <label>Entidad Federativa</label>
         </div>
-        <div class="input-field col s12 m6 l4">
-          <input id="cp" type="number" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_cp">
+          <input id="cp" name="cp" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_cp"></i>
           <label for="cp">Código Postal</label>
+          <p class="fomularioErrorEntrada">
+            Máximo 5 dígitos (números).
+          </p>
         </div>
       </div>
       <div class="row">
@@ -263,20 +287,32 @@
           </select>
           <label>Ocupación</label>
         </div>
-        <div class="input-field col s12 m6 l4">
-          <input id="puesto" type="text" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_puesto">
+          <input id="puesto" name="puesto" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_puesto"></i>
           <label for="puesto">Nombre de Plaza/Puesto</label>
+          <p class="fomularioErrorEntrada">
+            Solo debe contener letras.
+          </p>
         </div>
-        <div class="input-field col s12 m6 l4">
-          <input id="saldo" type="number" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_saldo">
+          <input id="saldo" name="saldo" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_saldo"></i>
           <label for="saldo">Saldo Mensual</label>
+          <p class="fomularioErrorEntrada">
+            Debe de contener de 4-5 dígitos (sin decimales)
+          </p>
         </div>
       </div>
       <!--END OF ROW-->
       <div class="row">
-        <div class="input-field col s12 m6 l4">
-          <input id="noEmp" type="number" class="validate">
+        <div class="input-field col s12 m6 l4" id="campo_noEmp">
+          <input id="noEmp" name="noEmp" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_noEmp"></i>
           <label for="noEmp">No.Empleado</label>
+          <p class="fomularioErrorEntrada">
+            Deben de ser 5-7 dígitos (números)
+          </p>
         </div>
         <div class="input-field col s12 m6 l4">
           <select>
@@ -351,17 +387,22 @@
         <!--horarios-->
         ¿Tienes cónyuge?
         <label>
-          <input name="conyuge" type="radio" class="si" />
+          <input name="conyuge" type="radio" class="si" value="si"/>
           <span>Sí</span>
         </label>
         <label>
-          <input name="conyuge" type="radio" class="no" checked/>
+          <input name="conyuge" type="radio" class="no" value="no" checked />
           <span>No</span>
         </label>
-        <div class="input-field col s12 m12 l8">
-          <input id="ext" type="number" class="validate">
+        <div class="input-field col s12 m12 l8" id="campo_ext">
+          <input id="ext" name="ext" type="text" class="validate">
+          <i class="formularioValidacion fas fa-times-circle grupo_ext"></i>
           <label for="ext">Extension</label>
+          <p class="fomularioErrorEntrada">
+            Deben ser 5 dígitos(números).
+          </p>
         </div>
+
       </div>
       <!--END OF ROW-->
       <!-- ******************** TERMINA DATOS DEL DERECHO HABIENTE****************************** -->
@@ -398,9 +439,13 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s12 m6 l6">
-            <input id="trabajoCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l6" id="campo_trabajoCon">
+            <input id="trabajoCon"name="trabajoCon" type="text" class="validate" >
+            <i class="formularioValidacion fas fa-times-circle grupo_trabajoCon"></i>
             <label for="trabajoCon">Lugar de trabajo</label>
+            <p class="fomularioErrorEntrada">
+              Acepta: letras, números, _ , - y máximo 5 palabras.
+            </p>
           </div>
           <div class="input-field col s12 m6 l6" id="campo_telTrabajoCon">
             <input id="telTrabajoCon" name="telTrabajoCon" type="tel" class="validate telNo">
@@ -415,35 +460,59 @@
           DOMICILIO DE TRABAJO
         </p>
         <div class="row">
-          <div class="input-field col s12 m6 l4">
-            <input id="calleTraCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l4" id="campo_calleTraCon">
+            <input id="calleTraCon" name="calleTraCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_calleTraCon"></i>
             <label for="calleTraCon">Calle</label>
+            <p class="fomularioErrorEntrada">
+                Solo acepta números y letras.
+            </p>
           </div>
-          <div class="input-field col s12 m6 l4">
-            <input id="noExtCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l4" id="campo_noExtCon">
+            <input id="noExtCon" name="noExtCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_noExtCon"></i>
             <label for="noExtCon">No. Exterior</label>
+            <p class="fomularioErrorEntrada">
+                Solo acepta números y letras.
+            </p>
           </div>
-          <div class="input-field col s12 m6 l4">
-            <input id="noIntCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l4" id="campo_noIntCon">
+            <input id="noIntCon" name="noIntCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_noIntCon"></i>
             <label for="noIntCon">No. Interior</label>
+            <p class="fomularioErrorEntrada">
+                Solo acepta números y letras.
+            </p>
           </div>
         </div>
 
         <div class="row">
-          <div class="input-field col s12 m6 l6">
-            <input id="coloniaCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l6" id="campo_coloniaCon">
+            <input id="coloniaCon" name="coloniaCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_coloniaCon"></i>
             <label for="coloniaCon">Colonia</label>
+            <p class="fomularioErrorEntrada">
+                Acepta: letras,números,-,_,.
+            </p>
           </div>
-          <div class="input-field col s12 m6 l6">
-            <input id="municipioCon" type="text" class="validate">
+          <div class="input-field col s12 m6 l6" id="campo_municipioCon">
+            <input id="municipioCon" name="municipioCon" type="text" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_municipioCon"></i>
             <label for="municipioCon">Alcaldía/Municipio</label>
+            <p class="fomularioErrorEntrada">
+                Acepta máximo 5 palabras y únicamente letras.
+            </p>
           </div>
         </div>
 
         <div class="row">
-          <div class="input-field col s12 m6 l6">
-            <input id="extensionCon" type="number" class="validate">
-            <label for="extensionCon">Extension (0000-99999)</label>
+          <div class="input-field col s12 m6 l6" id="campo_extensionCon">
+            <input id="extensionCon" name="extensionCon" type="number" class="validate">
+            <i class="formularioValidacion fas fa-times-circle grupo_extensionCon"></i>
+            <label for="extensionCon">Extension</label>
+            <p class="fomularioErrorEntrada">
+                Máximo de 4-5 dígitos(números)
+            </p>
           </div>
           <div class="input-field col s12 m6 l6" id="campo_curpCon">
             <input id="curpCon" name="curpCon" type="text" class="validate">
@@ -470,12 +539,12 @@
         <button class="btn waves-effect waves-light  btn-large" type="submit" name="action">
           Enviar
         </button>
-        <p class="mensajeExito">
-          El fomulario se envío correctamente.
-        </p>
         <button class="btn waves-effect waves-light  btn-large" type="reset" name="action">
           Limpiar
         </button>
+        <p class="mensajeExito">
+          El fomulario se envío correctamente.
+        </p>
       </div>
 
 
