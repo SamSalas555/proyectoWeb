@@ -49,9 +49,7 @@ $(function() {
     campos.telFijo && campos.telCel){
       formulario[0].reset();
       $(".mensajeExito").addClass("mensajeExito-Activo");
-      setTimeout(function(){
-        $(".mensajeExito").hide();
-      }, 2000);
+     
 
       $("div i").each(function(icono){
         icono.removeClass("fa-check-circle");
