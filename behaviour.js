@@ -3,79 +3,88 @@ const inputs = $('#formulario input'); //guarda TODAS las INPUTS dentro del form
 const expresiones = {
   boleta: /^(\d{10}|(PE|PP)\d{8})$/,
   nombre: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apePaterno:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apeMaterno:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  apePaterno: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  apeMaterno: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
   curp: /^([A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2})$/,
   correo: /^([a-záéíóúñüA-ZÁÉÍÓÚÑÜ0-9.\-_/\\]+@\w+(\.\w+)+)$/,
   nombreDH: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apePaternoDH:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apeMaternoDH:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  curpDH:/^([A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2})$/,
-  telFijo:/^[0-9]{10}$/,
-  telCel:/^[0-9]{10}$/,
+  apePaternoDH: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  apeMaternoDH: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  curpDH: /^([A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2})$/,
+  telFijo: /^[0-9]{10}$/,
+  telCel: /^[0-9]{10}$/,
   nombreCon: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apePaternoCon:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  apeMaternoCon:/^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
-  curpCon:/^([A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2})$/,
-  telTrabajoCon:/^[0-9]{10}$/
+  apePaternoCon: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  apeMaternoCon: /^((([A-ZÁÉÍÓÚÑ]{1})[a-záéíóúñ]+\s?){1,3})$/,
+  curpCon: /^([A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{2})$/,
+  telTrabajoCon: /^[0-9]{10}$/
 
 }
 
 const campos = {
   boleta: false,
   nombre: false,
-  apePaterno:false,
-  apeMaterno:false,
+  apePaterno: false,
+  apeMaterno: false,
   curp: false,
   correo: false,
   nombreDH: false,
-  apePaternoDH:false,
-  apeMaternoDH:false,
-  curpDH:false,
-  telFijo:false,
-  telCel:false,
-  nombreCon:false,
-  apePaternoCon:false,
-  apeMaternoCon:false,
-  curpCon:false,
-  telTrabajoCon:false
+  apePaternoDH: false,
+  apeMaternoDH: false,
+  curpDH: false,
+  telFijo: false,
+  telCel: false,
+  nombreCon: false,
+  apePaternoCon: false,
+  apeMaternoCon: false,
+  curpCon: false,
+  telTrabajoCon: false
 }
 
 $(function() {
   formulario.submit(function(event) {
     event.preventDefault();
-    if(campos.foto && campos.boleta && campos.apePaterno && campos.apeMaterno && campos.nombre && campos.curp && campos.correo
-    && campos.nombreDH && campos.apePaternoDH && campos.apeMaternoDH && campos.curpDH &&
-    campos.telFijo && campos.telCel){
-      formulario[0].reset();
-      $(".mensajeExito").addClass("mensajeExito-Activo");
-     
 
-      $("div i").each(function(icono){
-        icono.removeClass("fa-check-circle");
-        icono.addClass("formularioValidacion");
-      });
-    }else{
-      $(".formularioMensajeError").addClass("formularioMensajeError-Activo")
-    }
+      if ($('.no').prop('checked')) {
+        if (campos.boleta && campos.apePaterno && campos.apeMaterno && campos.nombre && campos.curp && campos.correo &&
+          campos.nombreDH && campos.apePaternoDH && campos.apeMaternoDH && campos.curpDH &&
+          campos.telFijo && campos.telCel) {
+            verificaConyuge();
+          } else {
+            $(".formularioMensajeError").addClass("formularioMensajeError-Activo")
+          }
+      } else {
+        if (campos.boleta && campos.apePaterno && campos.apeMaterno && campos.nombre && campos.curp && campos.correo &&
+          campos.nombreDH && campos.apePaternoDH && campos.apeMaternoDH && campos.curpDH &&
+          campos.telFijo && campos.telCel && campos.apeMaternoCon && campos.apePaternoCon &&
+        campos.curpCon && campos.telTrabajoCon) {
+          verificaConyuge();
+        } else {
+          $(".formularioMensajeError").addClass("formularioMensajeError-Activo")
+        }
+      }
+
+
+
 
   });
 
-  $('.datepicker').datepicker({//materialize CALENDARIO
-  minDate: new Date(2015, 5, 14),
-  autoClose: true
+  $('.datepicker').datepicker({ //materialize CALENDARIO
+    minDate: new Date(2015, 5, 14),
+    maxDate: new Date(2022,5,10),
+    autoClose: true
   });
   $('select').formSelect(); //materialize SELECT
   $('#fechaNacimiento').on('change', calcularEdad);
 
-  $('#datosCon').hide();//MOSTRAR O NO LOS DATOS DEL CONYUGE
-    inputs.on('change', function() {
-      if ($('.no').prop('checked')) {
-        $('#datosCon').hide();
-      } else {
-        $('#datosCon').show();
-      }
-    });
+  $('#datosCon').hide(); //MOSTRAR O NO LOS DATOS DEL CONYUGE
+  inputs.on('change', function() {
+    if ($('.no').prop('checked')) {
+      $('#datosCon').hide();
+    } else {
+      $('#datosCon').show();
+    }
+  });
 
   inputs.each(function() {
     $(this).keyup(validarFormulario); //cada que dejamos de presionar una tecla
@@ -129,19 +138,19 @@ function validarFormulario(e) {
       break;
     case "apePaternoCon":
       validarCampo(expresiones.apePaternoCon, e.target, e.target.name);
-    break;
+      break;
     case "apeMaternoCon":
       validarCampo(expresiones.apeMaternoCon, e.target, e.target.name);
-    break;
+      break;
     case "nombreCon":
       validarCampo(expresiones.nombreCon, e.target, e.target.name);
-    break;
+      break;
     case "telTrabajoCon":
       validarCampo(expresiones.telTrabajoCon, e.target, e.target.name);
-    break;
+      break;
     case "curpCon":
       validarCampo(expresiones.curpCon, e.target, e.target.name);
-    break;
+      break;
   }
 }
 
@@ -180,4 +189,21 @@ function calcularEdad() {
     m += 12;
   }
   $('#meses').val(m);
+}
+
+function verificaConyuge(){
+    formulario[0].reset();
+
+    $(".mensajeExito").addClass("mensajeExito-Activo");
+    setTimeout(function(){
+      $(".mensajeExito").hide();
+      $("i").each(function(icono){
+        icono.remove();
+      });
+    },3000);
+
+    $("div i").each(function(icono) {
+      icono.removeClass("fa-check-circle");
+      icono.addClass("formularioValidacion");
+    });
 }
