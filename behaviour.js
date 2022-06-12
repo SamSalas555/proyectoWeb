@@ -83,15 +83,28 @@ const campos = {
 $(function() {
   formulario.submit(function(event) {
     event.preventDefault();
-
     if ($('.no').prop('checked')) {
       if (campos.boleta && campos.nombre && campos.apePaterno && campos.apeMaterno && campos.curp &&
         campos.apePaternoDH && campos.apeMaternoDH && campos.nombreDH && campos.curpDH && campos.calle && campos.noInt &&
         campos.noExt && campos.colonia && campos.municipio && campos.cp && campos.telFijo && campos.telCel &&
-        campos.correo && campos.puesto && campos.saldo && campos.noEmp && campos.ext) {
-        verificaConyuge();
+        campos.correo && campos.puesto && campos.saldo && campos.noEmp && campos.ext &&
+        ($("#cendi").val() !== '') && ($("#entidad").val() !== '') && ($("#ocupacion").val() !== '') &&
+        ($("#adscripcion").val() !== '') && ($("#horario").val() !== '') &&
+        ($("#file").val() !== '')) {
+        alertaVerificaDatos();
+        deSoloLectura(); //campos solo se pueden leer no modificar
+        inicioDePagina();
+        $(".botonEnviar").hide();
+        $(".botonesConfirmacion").addClass("botonesConfirmacion-Activos");
+        modificarFormulario();
+        enviarFormulario();
       } else {
-        $(".formularioMensajeError").addClass("formularioMensajeError-Activo")
+        inicioDePagina();
+        $(".formularioMensajeError").addClass("formularioMensajeError-Activo");
+        setTimeout(function() {
+          $(".formularioMensajeError").removeClass("formularioMensajeError-Activo");
+        }, 4000);
+
       }
     } else {
       if (campos.boleta && campos.nombre && campos.apePaterno && campos.apeMaterno && campos.curp &&
@@ -100,10 +113,21 @@ $(function() {
         campos.correo && campos.puesto && campos.saldo && campos.noEmp && campos.ext && campos.apePaternoCon &&
         campos.apeMaternoCon && campos.nombreCon && campos.trabajoCon && campos.telTrabajoCon && campos.calleTraCon &&
         campos.noExtCon && campos.noIntCon && campos.coloniaCon && campos.municipioCon && campos.extensionCon &&
-        campos.curpCon) {
-        verificaConyuge();
+        campos.curpCon && ($("#cendi").val() !== '') && ($("#entidad").val() !== '') && ($("#ocupacion").val() !== '') &&
+        ($("#adscripcion").val() !== '') && ($("#horario").val() !== '') && ($("#file").val() !== '')) {
+        alertaVerificaDatos();
+        deSoloLectura(); //campos solo se pueden leer no modificar
+        inicioDePagina(); //nos lleva al inicio de la pagina
+        $(".botonEnviar").hide();
+        $(".botonesConfirmacion").addClass("botonesConfirmacion-Activos");
+        modificarFormulario();
+        enviarFormulario();
       } else {
-        $(".formularioMensajeError").addClass("formularioMensajeError-Activo")
+        inicioDePagina();
+        $(".formularioMensajeError").addClass("formularioMensajeError-Activo");
+        setTimeout(function() {
+          $(".formularioMensajeError").removeClass("formularioMensajeError-Activo");
+        }, 4000);
       }
     }
   });
@@ -281,19 +305,64 @@ function calcularEdad() {
   $('#meses').val(m);
 }
 
-function verificaConyuge() {
-  formulario[0].reset();
-
+function enviaBaseDeDatos() {
   $(".mensajeExito").addClass("mensajeExito-Activo");
+  formulario.off(); //desactiva event.preventDefault();
+  formulario.submit(); //Permite enviar los datos del formulario a la base de datos
   setTimeout(function() {
     $(".mensajeExito").hide();
-    $("i").each(function(icono) {
-      icono.remove();
-    });
+    formulario[0].reset();
   }, 3000);
 
-  $("div i").each(function(icono) {
-    icono.removeClass("fa-check-circle");
-    icono.addClass("formularioValidacion");
+  $(".fas").remove(".correcto, .fa-check-circle");
+
+}
+
+function deSoloLectura() {
+  inputs.each(function() {
+    $(this).prop("disabled", true);
   });
+}
+
+function modificarInputs() {
+  inputs.each(function() {
+    $(this).prop("disabled", false);
+  });
+  // Enable #x
+  $("select").each(function() {
+    prop("disabled", false);
+  });
+}
+
+function inicioDePagina() {
+  jQuery('body,html').animate({ //hasta arriba de la pagina
+    scrollTop: '0px'
+  }, 0);
+}
+
+function finalDePagina() {
+  jQuery('body,html').animate({
+    scrollTop: $(document).height()
+  }, 800);
+}
+
+function modificarFormulario() {
+  $("#Modificar").on("mouseleave", function() {
+    event.preventDefault();
+    alert("Ahora puedes modificar");
+    inicioDePagina();
+    modificarInputs();
+  });
+}
+
+function enviarFormulario() {
+  $("#Enviar").click(function() {
+    $(".botonesConfirmacion").hide();
+    enviaBaseDeDatos();
+  });
+}
+
+function alertaVerificaDatos() {
+  alert("Hola " + $("#nombreDH").val() + " " + $("#apePaternoDH").val() + " " +
+    $("#apeMaternoDH").val() + " verifica que los datos que ingresaste son correctos:");
 }
