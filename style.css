@@ -14,7 +14,7 @@ h1{
 
 
 
-.header{
+.encabezado{
   color: white;
   letter-spacing: 3px;
   background-color: #383838;
@@ -137,14 +137,14 @@ h1{
 
 .formularioMensajeError{ /*mensaje que se muestra cuando el formulario esta incompleto o incorrecto*/
   background-color: #FEF9A7;
-  margin:3% 0;
-  height: 4rem;
+  margin:1% 0 2% 0;
+  height: 4.5rem;
   border-radius: 5px;
   font-weight: bold;
   text-align: center;
-  padding: 0.075rem;
-  font-size: 20px;
-  padding-bottom: 0.5rem;
+  padding: 0.080rem;
+  padding-bottom: 0.8rem;
+  font-size: 15px;
   display:none;
 }
 
@@ -212,3 +212,60 @@ h1{
    .input-field .prefix.active {
      color: #7900FF;
    }
+ /* ********************Diseño HEADER**************************** */
+   header{
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  font-size: 5rem;
+}
+header div {
+  background-color: #c62828;
+  padding: 0;
+  color: #FFEDD3;
+}
+.row.header{
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  width: 90px;
+  margin-top: 5px;
+}
+/* ******************Formato CARTAS**************************** */
+.card {
+  border-radius: 25px;
+}
+
+.card .card-image .card-title {
+  color: black;
+  padding: 0px;
+  background-color: #FFEDD3;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card .card-image img {
+  width: 50%;
+  border-radius: 0;
+  position: relative;
+  left: 25%;
+  padding-top: 0px;
+}
+
+.card .card-content {
+  text-align: justify;
+  padding: 20px 10px;
+}
+
+.cards{
+  padding: 0px;
+}
+
+.card-image {
+  padding: 0px;
+}
+
