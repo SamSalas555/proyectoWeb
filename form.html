@@ -18,9 +18,15 @@
   <div class="container">
     <div class="header row">
       <h1>FICHA DE INSCRIPCIÓN</h1>
-
     </div>
-    <form class="form" id="formulario" action="algo.php" method="post">
+    <div class="formularioMensajeError">
+      <p>
+        <i class="fas fa-exclamation-triangle"></i>
+        <em>Error:</em>
+        Verifica nuevamente todos los campos y llénalos correctamente.
+      </p>
+    </div>
+    <form class="form" id="formulario" action="getForm.php" method="post">
       <div class="row">
         <div class="input-field col s12 m6 l4">
           <input id="cicloEscolar" disabled type="text" value="2022-2023" class="validate">
@@ -28,7 +34,7 @@
         </div>
 
         <div class="input-field col s12 m6 l8">
-          <select>
+          <select id="cendi">
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="Amalia">Amalia Solórzano de Cárdenas</option>
             <option value="Clementina" disabled>Clementina Batalla de Bassols</option>
@@ -42,7 +48,7 @@
         <div class="file-field input-field col s12 m6 l4" id="campo_foto">
           <div class="btn">
             <span>File</span>
-            <input type="file" accept="image/png, image/jpeg">
+            <input type="file" id="file" accept="image/png, image/jpeg">
           </div>
           <div class="file-path-wrapper">
             <input id="foto" name="foto" class="file-path validate" type="text">
@@ -207,7 +213,7 @@
           </p>
         </div>
         <div class="input-field col s12 m6 l4">
-          <select>
+          <select id="entidad">
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="Aguascalientes">Aguascalientes</option>
             <option value="BajaCalifornia">Baja California</option>
@@ -279,7 +285,7 @@
           </p>
         </div>
         <div class="input-field col s12 m6 l4">
-          <select>
+          <select id="ocupacion">
             <option value="" disabled selected>Elige una opción</option>
             <option value="Docente">Docente</option>
             <option value="PAAE">PAAE</option>
@@ -315,7 +321,7 @@
           </p>
         </div>
         <div class="input-field col s12 m6 l4">
-          <select>
+          <select id="adscripcion">
             <option value="" disabled selected>Elige una opción</option>
             <option value="areaCentral">Área Central</option>
             <option value="" disabled>Nivel Medio Superior</option>
@@ -376,7 +382,7 @@
           <label>Adscripción</label>
         </div>
         <div class="input-field col s12 m6 l4">
-          <select>
+          <select id="horario">
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="7am3pm">07:00am-15:00pm</option>
             <option value="8am3pm">08:00am-15:00pm</option>
@@ -528,13 +534,6 @@
 
 
       <!-- OTRAS COSAS DE VALIDACION Y ENVIAR-->
-      <div class="formularioMensajeError">
-        <p>
-          <i class="fas fa-exclamation-triangle"></i>
-          <em>Error:</em>
-          Verifica nuevamente todos los campos y llénalos correctamente.
-        </p>
-      </div>
       <div class="botonEnviar">
         <button class="btn waves-effect waves-light  btn-large" type="submit" name="action">
           Enviar
@@ -542,11 +541,19 @@
         <button class="btn waves-effect waves-light  btn-large" type="reset" name="action">
           Limpiar
         </button>
-        <p class="mensajeExito">
-          El fomulario se envío correctamente.
-        </p>
       </div>
-
+      <div class="botonesConfirmacion">
+        <h5>¿Estás seguro que quieres mandar tu formulario?</h5>
+        <button class="btn confirma waves-effect waves-light  btn-large" id="Modificar">
+          Modificar
+        </button>
+        <button class="btn confirma waves-effect waves-light  btn-large" id="Enviar">
+          Enviar
+        </button>
+      </div>
+      <p class="mensajeExito">
+        El fomulario se envío correctamente.
+      </p>
 
   </div>
   <!--END OF CONTAINER-->
